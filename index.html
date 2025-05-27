@@ -51,3 +51,198 @@
       font-size: 2rem;
       text-shadow: 1px 1px 4px #000;
     }
+
+    main {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: var(--color-primario);
+      border-left: 5px solid var(--color-secundario);
+      padding-left: 0.5rem;
+    }
+
+    .acordeon {
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      background: #fff;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .acordeon h3 {
+      margin: 0;
+      padding: 1rem;
+      background-color: var(--color-primario);
+      color: white;
+      cursor: pointer;
+    }
+
+    .contenido {
+      padding: 1rem;
+      display: none;
+      background-color: #f9f9f9;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    form button {
+      background-color: var(--color-secundario);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .exito {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 8px;
+      display: none;
+    }
+
+    .decoracion {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin: 2rem auto;
+      display: block;
+    }
+
+    @media(max-width: 768px) {
+      .portada {
+        font-size: 1.5rem;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://github.com/karen23-ui/agencia-de-viajes-/blob/main/IMG_0272.JPG?raw=true" alt="Logo Viaja Feliz">
+    <h1>Viaja Feliz</h1>
+  </header>
+  <div class="portada">¡Descubre tu próximo destino soñado!</div>
+
+  <main>
+    <section>
+      <h2>¿Quiénes somos?</h2>
+      <p>Agencia especializada en diseñar experiencias de viaje inolvidables. Ofrecemos paquetes personalizados a destinos nacionales e internacionales.</p>
+      <h2>Misión</h2>
+      <p>Crear recuerdos únicos brindando servicios de viaje seguros, accesibles y emocionantes para todas las edades.</p>
+      <h2>Visión</h2>
+      <p>Ser la agencia líder en turismo familiar y experiencias personalizadas en América Latina.</p>
+      <h2>Valores</h2>
+      <ul>
+        <li>Compromiso</li>
+        <li>Pasión por viajar</li>
+        <li>Transparencia</li>
+        <li>Seguridad</li>
+        <li>Atención personalizada</li>
+      </ul>
+    </section>
+
+    <img class="decoracion" src="https://github.com/karen23-ui/agencia-de-viajes-/blob/main/d99abc92-6981-4ee8-8180-378c12fee647.JPG?raw=true" alt="Decoración intermedia">
+
+    <section>
+      <h2>Destinos y Paquetes</h2>
+      <div class="acordeon">
+        <h3>🌴 Caribe All-Inclusive</h3>
+        <div class="contenido">Paquetes todo incluido a Cancún, Punta Cana, Aruba y más. Vuelos, hospedaje y tours incluidos.</div>
+      </div>
+      <div class="acordeon">
+        <h3>🏔️ Aventura en Sudamérica</h3>
+        <div class="contenido">Viajes a Perú, Colombia, Chile con actividades como trekking, rafting y visitas culturales.</div>
+      </div>
+      <div class="acordeon">
+        <h3>🏛️ Ciudades Europeas</h3>
+        <div class="contenido">Recorre París, Roma, Londres y más con itinerarios guiados, hoteles 3-4 estrellas y desayuno.</div>
+      </div>
+      <div class="acordeon">
+        <h3>👨‍👧‍👦 Viajes Familiares</h3>
+        <div class="contenido">Paquetes diseñados para niños y adultos, con parques temáticos, cruceros y actividades seguras.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Reserva tu viaje</h2>
+      <form id="reservaForm">
+        <input type="text" name="nombre" placeholder="Nombre completo" required>
+        <input type="tel" name="telefono" placeholder="Teléfono" required>
+        <input type="email" name="email" placeholder="Correo electrónico" required>
+        <input type="number" name="viajeros" placeholder="Número de viajeros" required>
+        <select name="destino" required>
+          <option value="">Destino deseado</option>
+          <option>Caribe All-Inclusive</option>
+          <option>Aventura en Sudamérica</option>
+          <option>Ciudades Europeas</option>
+          <option>Viajes Familiares</option>
+        </select>
+        <input type="date" name="salida" required>
+        <input type="date" name="regreso" required>
+        <textarea name="comentarios" rows="4" placeholder="Comentarios adicionales"></textarea>
+        <button type="submit">Reservar</button>
+        <div class="exito" id="mensajeExito">
+          ✈️ Gracias, tu reserva ha sido registrada.<br>
+          📬 Pronto recibirás un correo con los detalles.<br>
+          🏖️ ¡Prepárate para tu aventura!
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    document.querySelectorAll('.acordeon h3').forEach(item => {
+      item.addEventListener('click', () => {
+        const contenido = item.nextElementSibling;
+        contenido.style.display = contenido.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+
+    const form = document.getElementById('reservaForm');
+    const mensajeExito = document.getElementById('mensajeExito');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      fetch('https://script.google.com/macros/s/AKfycbyFqTbo1nE2iXYZYbbgi9j4VwzI7rSRmpRLwhYQabcde123456/exec', {
+        method: 'POST',
+        body: data
+      })
+      .then(() => {
+        mensajeExito.style.display = 'block';
+        form.reset();
+        mensajeExito.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+          mensajeExito.style.display = 'none';
+        }, 5000);
+      });
+    });
+  </script>
+</body>
+</html>
