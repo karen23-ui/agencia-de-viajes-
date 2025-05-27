@@ -22,8 +22,10 @@
     }
     header img {
       height: 60px;
+      width: auto;
       border-radius: 12px;
       margin-right: 1rem;
+      object-fit: cover;
     }
     header h1 {
       color: #0077b6;
@@ -199,6 +201,7 @@
       e.preventDefault();
       const form = e.target;
       const data = new FormData(form);
+
       fetch('https://script.google.com/macros/s/AKfycbyZcQpUwJStBNQBdSM8Qx13u35DW6uF3VwT8JPvFEe_UOMiALidk_EHuZC7Rj8v-hDn/exec', {
         method: 'POST',
         body: data
@@ -206,8 +209,8 @@
       .then(() => {
         const mensaje = document.getElementById('mensajeExito');
         mensaje.style.display = 'block';
+        mensaje.scrollIntoView({ behavior: 'smooth' });
         setTimeout(() => mensaje.style.display = 'none', 5000);
-        form.scrollIntoView({ behavior: 'smooth' });
         form.reset();
       })
       .catch(err => alert('Error al enviar reserva. Intenta más tarde.'));
